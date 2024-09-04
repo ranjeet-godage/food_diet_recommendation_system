@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Recommendations</title>
+</head>
+<body>
+    <h1>Your Recommendations</h1>
+    <p>Your body mass index (BMI) is: {{ bmi }}</p>
+    <p>According to your BMI, you are {{ category }}</p>
+
+    <h2>Suggested Food Items:</h2>
+    <ul>
+        {% for food in foods %}
+            <li>{{ food }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('profile') }}" class="button">Back to Profile</a>
+    <a href="{{ url_for('logout') }}" class="button">Logout</a>
+</body>
+</html>

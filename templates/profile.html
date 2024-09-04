@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Profile</title>
+</head>
+<body>
+    <form method="post">
+        <h1>Profile</h1>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+        <br>
+        <label for="height">Height (in cm):</label>
+        <input type="number" id="height" name="height" step="0.1" required>
+        <br>
+        <label for="weight">Weight (in kg):</label>
+        <input type="number" id="weight" name="weight" step="0.1" required>
+        <br>
+        <label for="diet_preference">Diet Preference:</label>
+        <select id="diet_preference" name="diet_preference" required>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Non-Vegetarian">Non-Vegetarian</option>
+        </select>
+        <br><br>
+        <button type="submit">Update Profile</button><br>
+        <a href="{{ url_for('welcome') }}" class="button">Back to Welcome Page</a>
+    </form>
+</body>
+</html>

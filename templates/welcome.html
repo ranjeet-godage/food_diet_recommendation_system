@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Welcome</title>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome, {{ session['username'] }}!</h1>
+    </header>
+
+
+    <div class="container">
+        <div id="welcome-message">
+            <p style="color: white;">We're glad to have you here, {{ session['username'] }}!</p>
+            {% if bmi is not none %}
+                <p style="color: white;">Your BMI is: {{ bmi }}</p>
+            {% else %}
+                <p style="color: white;">Unable to calculate BMI. Please update your profile information.</p>
+            {% endif %}
+            <p style="color: white;">What would you like to do next?</p>
+ 
+
+            <!-- Buttons for navigation -->
+            <a href="{{ url_for('profile') }}" class="button">Go to Profile</a>
+            <a href="{{ url_for('logout') }}" class="button">Logout</a>
+        </div>
+    </div>
+
+</body>
+</html>
